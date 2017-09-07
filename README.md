@@ -86,4 +86,4 @@ Which is the negation of the expression we want to prove. Assuming that our taut
 
 ## Acknowledgements
 
-This project was done at the [Recurse Center], where [Raph](https://github.com/raphlinus) and I met and had a discussion which prompted him to have the idea for this project. I would like to thank him for sitting down with me and explaining his idea! 
+This project was done at the [Recurse Center](https://www.recurse.com/), where [Raph](https://github.com/raphlinus) and I met and had a discussion which prompted him to have the idea for this project. I would like to thank him for sitting down with me and explaining his idea! 
