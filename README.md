@@ -1,6 +1,6 @@
 # Metamath expression tree to SAT solver cnf
 
-*Status: Needs code review and documentation.*
+*Status: Code review pending.*
 *Mood: Proud of the code!*
 
 Converts [Metamath](http://us.metamath.org/) expression tree into SAT solver format and optimizes number of variables. First step to automatically generating tautology proof from SAT solvers based on [this idea](https://groups.google.com/forum/#!topic/metamath/WwP52TVqWg8) by [Raph Levien](https://github.com/raphlinus).
