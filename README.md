@@ -83,3 +83,7 @@ Notice the first clause is
 ```
 
 Which is the negation of the expression we want to prove. Assuming that our tautological statement `1` is true, adding the clause `-1 0` guarantees that the system is unsolvable. From there we can set up a trace for the SAT solver and attempt to automate the proof of `1` by resolving the trace (work to come). 
+
+## Acknowledgements
+
+This project was done at the [Recurse Center], where [Raph](https://github.com/raphlinus) and I met and had a discussion which prompted him to have the idea for this project. I would like to thank him for sitting down with me and explaining his idea! 
