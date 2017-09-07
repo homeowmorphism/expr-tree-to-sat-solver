@@ -1,3 +1,8 @@
+# Metamath expression tree to SAT solver cnf
+
+Converts metamath expression tree into SAT solver format and optimizes number of variables. 
+*Status: WIP*
+
 Still need to do:
 * Stream the input
 
