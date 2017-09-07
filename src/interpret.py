@@ -41,7 +41,6 @@ def make_imp_clause(x, a, b):
         ]
     return imp_clause
 
-# --- 
 def assign_var(node, assignment):
     i = len(assignment)
     assignment.update({node: i}) 
@@ -58,7 +57,6 @@ def clean_var_expr(var_node, current_node, assignment):
         if current_node.right: 
             clean_var_expr(var_node, current_node.right, assignment)
 
-# need to fix this
 def optimize(node, assignment, var_expr_set):
     if node.expr in var_expr:
         if node.expr not in var_expr_set:
@@ -115,9 +113,8 @@ def near_childvar(node, assignment):
     else:
         return near_childvar(node.left, assignment)
 
-# to finish up tomorrow
 def declare_clauses(assignment):
-    # add negation of our statement 
+    # adds negation of our statement 
     clauses = [(-1,)]
     for node in assignment:
         if node.expr in bin_op:
@@ -147,7 +144,6 @@ def print_to_file(filename, clauses, var_len):
             str_clause = align_clause(clause)
             f.write("\n" + str_clause)
 
-# need to have all methods return the assignment
 def interpret(tree):
     assignment = {}
     assignment = bfs_script(tree, assign_var, assignment, assignment)
