@@ -32,6 +32,12 @@ In the picoSAT folder type in
 $ picosat PATH_TO_THIS_REPO/out/ex.cnf
 ```
 
+You should expect the output
+
+```
+s UNSATISFIABLE
+```
+
 ## Example
 
 **Input** `input/theorem.out` (filtered for clarity):
