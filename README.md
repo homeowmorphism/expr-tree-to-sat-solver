@@ -29,7 +29,7 @@ Download [picoSAT](http://fmv.jku.at/picosat/).
 In the picoSAT folder type in
 
 ```
-$ picosat PATH_TO_THIS_REPO/out/ex.cnfE
+$ picosat PATH_TO_THIS_REPO/out/ex.cnf
 ```
 
 ## Example
