@@ -15,7 +15,7 @@ $ python translate.py
 
 You should see the output in `out/ex.cnf`. 
 
-**To modify the input/output files**, open `translate.py` and change
+**To modify the input/output files** open `translate.py` and change
 
 ```
 INPUT_FILE = "your_input_file
