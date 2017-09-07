@@ -1,7 +1,7 @@
 from expr_tree import ExprTree 
 from bfs import bfs
 
-FILE = "input/exoutput.txt"
+FILE = "input/theorem.out"
 
 def parse_lines(filename):
     with open(filename, 'r') as f:
@@ -9,7 +9,6 @@ def parse_lines(filename):
         lines = lines.splitlines()
     return lines 
 
-# MIGHT HAVE TO CHANGE HOW TO READ FILE 
 def extract_lines(lines):
     data_list = []
     for line in lines:
@@ -17,9 +16,8 @@ def extract_lines(lines):
         expr = line.strip() 
         if expr.startswith('atom '):
             expr = expr[len('atom '):]
-
-        depth = line.count(' ')
-        data_list.append((expr, depth))
+            depth = line.count(' ')
+            data_list.append((expr, depth))
 
     return data_list 
 

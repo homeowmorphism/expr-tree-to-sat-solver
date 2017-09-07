@@ -153,9 +153,15 @@ def interpret(tree):
     assignment = bfs_script(tree, assign_var, assignment, assignment)
     assignment = optimize(tree, assignment, set([]))
     assignment, var_num = reenumerate(assignment)
+    
+    print "Printing assignment."
+    print assignment 
+
     clauses = declare_clauses(assignment)
+    print "Printing clauses."
     print clauses
+    
     print_to_file(OUT_FILE, clauses, var_num)
 
 tree = parse_into_tree(INPUT_FILE)
-x = interpret(tree)
+interpret(tree)
