@@ -19,7 +19,7 @@ You should see the output in `out/ex.cnf`.
 
 ```
 INPUT_FILE = "your_input_file"
-OUT_FILE = "your_out_file"
+OUT_FILE = "your_output_file"
 ```
 
 ### Pass output to picoSAT 
