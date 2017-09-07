@@ -145,7 +145,7 @@ def print_to_file(filename, clauses, var_len):
     with open(filename, "a") as f:
         for clause in clauses:
             str_clause = align_clause(clause)
-            f.write("\n " + str_clause)
+            f.write("\n" + str_clause)
 
 # need to have all methods return the assignment
 def interpret(tree):
