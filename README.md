@@ -49,7 +49,7 @@ atom |-
         atom ph
 ```
 
-`theorem.out` represents the theorem "not P implies Q iff not Q implies P". 
+where `theorem.out` represents the theorem "not P implies Q iff not Q implies P". 
 ` ( -. ph -> ps ) <-> ( -. ps -> ph ) )`
 
 **Output** `out/ex.cnf`
