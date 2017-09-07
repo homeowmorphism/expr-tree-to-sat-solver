@@ -51,7 +51,7 @@ atom |-
 
 where `theorem.out` represents the theorem "not P implies Q iff not Q implies P", written as
 
-` ( -. ph -> ps ) <-> ( -. ps -> ph ) )`
+` ( -. ph -> ps ) <-> ( -. ps -> ph ) )`.
 
 **Output** `out/ex.cnf`
 
