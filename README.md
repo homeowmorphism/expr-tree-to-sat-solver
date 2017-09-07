@@ -3,7 +3,7 @@
 *Status: Needs code review and documentation.*
 *Mood: Proud of the code!*
 
-Converts metamath expression tree into SAT solver format and optimizes number of variables. 
+Converts metamath expression tree into SAT solver format and optimizes number of variables. First step to building an automatically generating tautology proof from SAT solvers based on [this idea](https://groups.google.com/forum/#!topic/metamath/WwP52TVqWg8) by [Raph Levien](https://github.com/raphlinus).
 
 ## Run
 
