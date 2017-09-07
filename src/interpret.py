@@ -154,6 +154,7 @@ def interpret(tree):
     assignment = optimize(tree, assignment, set([]))
     assignment, var_num = reenumerate(assignment)
     clauses = declare_clauses(assignment)
+    print clauses
     print_to_file(OUT_FILE, clauses, var_num)
 
 tree = parse_into_tree(INPUT_FILE)
