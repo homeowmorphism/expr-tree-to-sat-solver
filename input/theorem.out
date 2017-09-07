@@ -1,0 +1,33 @@
+theorem
+  step con1b
+  []
+  []
+  _
+  atom |-
+    atom <->
+      atom ->
+        atom -.
+          atom ph
+        atom ps
+      atom ->
+        atom -.
+          atom ps
+        atom ph
+  []
+    line
+      step l0
+      step con1
+      []
+      _
+    line
+      step l1
+      step con1
+      []
+      _
+    line
+      step l2
+      step impbii
+      []
+        step l0
+        _
+      _
