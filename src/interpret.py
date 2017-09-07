@@ -1,8 +1,4 @@
 from bfs import bfs_script
-from parse import parse_into_tree
-
-INPUT_FILE = "input/exoutput.txt"
-OUT_FILE = "out/ex.cnf" 
 
 bin_op = set(['<->', '->', '\/', '/\\'])
 un_op = set(['|-', '=', '-.'])
@@ -57,7 +53,7 @@ def clean_var_expr(var_node, current_node, assignment):
         if current_node.right: 
             clean_var_expr(var_node, current_node.right, assignment)
 
-def optimize(node, assignment, var_expr_set):
+def optimize(node, tree, assignment, var_expr_set):
     if node.expr in var_expr:
         if node.expr not in var_expr_set:
             var_expr_set.add(node.expr)
@@ -65,7 +61,7 @@ def optimize(node, assignment, var_expr_set):
 
     elif node.expr in un_op:
         assignment[node] = None
-        optimize(node.left, assignment, var_expr_set)
+        optimize(node.left, tree,  assignment, var_expr_set)
 
         if node.expr == '-.':
             var = assignment[node.left]
@@ -76,9 +72,8 @@ def optimize(node, assignment, var_expr_set):
             return assignment
         
     elif node.expr in bin_op:
-        optimize(node.left, assignment, var_expr_set)
-        optimize(node.right, assignment, var_expr_set)
-        # not sure what to do here
+        optimize(node.left, tree, assignment, var_expr_set)
+        optimize(node.right, tree, assignment, var_expr_set)
     else: 
         raise ValueError("Could not parse expression " + node.expr + ".")
 
@@ -127,27 +122,10 @@ def declare_clauses(assignment):
                 clauses.extend(make_imp_clause(x,a,b))
     return clauses
 
-# optimized for picosat
-def align_clause(clause):
-    str_clause = str(clause[0])
-    for i in range(1, len(clause)):
-        str_clause += " " + str(clause[i])
-    str_clause += " 0"
-    return str_clause
-
-# optimized for picosat
-def print_to_file(filename, clauses, var_len):
-    with open(filename, "w") as f:
-        f.write("p cnf " + str(var_len) + " " + str(len(clauses)))
-    with open(filename, "a") as f:
-        for clause in clauses:
-            str_clause = align_clause(clause)
-            f.write("\n" + str_clause)
-
 def interpret(tree):
     assignment = {}
     assignment = bfs_script(tree, assign_var, assignment, assignment)
-    assignment = optimize(tree, assignment, set([]))
+    assignment = optimize(tree, tree, assignment, set([]))
     assignment, var_num = reenumerate(assignment)
     
     print "Printing assignment."
@@ -156,8 +134,6 @@ def interpret(tree):
     clauses = declare_clauses(assignment)
     print "Printing clauses."
     print clauses
-    
-    print_to_file(OUT_FILE, clauses, var_num)
 
-tree = parse_into_tree(INPUT_FILE)
-interpret(tree)
+    return clauses, var_num
+    

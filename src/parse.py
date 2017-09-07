@@ -1,5 +1,5 @@
-from expr_tree import ExprTree 
-from bfs import bfs
+from src.expr_tree import ExprTree 
+from src.bfs import bfs
 
 FILE = "input/theorem.out"
 
