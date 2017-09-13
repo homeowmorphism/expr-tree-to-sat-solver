@@ -2,6 +2,7 @@ from src.parse import parse_into_tree
 from src.interpret import interpret
 from src.format_pico import print_to_file
 
+# these should be command line argument
 INPUT_FILE = "input/theorem.out"
 OUT_FILE = "theorem.cnf"
 
