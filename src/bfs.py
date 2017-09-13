@@ -1,5 +1,10 @@
 # use deque instead of list 
 # call the script "closure"
+
+# huh no need for recursion lol
+# ret -- not really needed
+# closure = function and the state (environment)
+# how to create this? 
 def bfs_internal(tree, visit, script, script_mem, ret):
     if not visit:
         visit = [tree]
