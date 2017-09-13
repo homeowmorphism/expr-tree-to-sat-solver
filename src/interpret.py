@@ -108,6 +108,7 @@ def near_childvar(node, assignment):
     else:
         return near_childvar(node.left, assignment)
 
+# assignment is map 
 def declare_clauses(assignment):
     # adds negation of our statement 
     clauses = [(-1,)]
