@@ -1,3 +1,5 @@
+# expr should be "op" for operator
+
 class ExprTree:
     def __init__(self, expr = None, depth = None, left = None, right = None):
         self.expr = expr
