@@ -98,7 +98,7 @@ def reenumerate(assignment):
     for i in range(len(old_vars)):
         var_dict.update({old_vars[i]: new_vars[i]})
         
-    # this only works because Python is stable
+    # We rely on the fact that the keys appear in the order they were assigned in Python.
     for key in assignment:
         if assignment[key]:
             old_var = assignment[key]
