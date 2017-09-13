@@ -102,6 +102,7 @@ def reenumerate(assignment):
                 assignment[key] = var_dict[old_var]
     return assignment, n  
 
+# the control flow should be based on whether or not we have un_op.
 def near_childvar(node, assignment):
     if assignment[node]:
         return assignment[node]
