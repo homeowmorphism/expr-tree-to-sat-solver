@@ -2,6 +2,7 @@ from bfs import bfs_script
 
 bin_op = set(['<->', '->', '\/', '/\\'])
 un_op = set(['|-', '=', '-.'])
+# SHOULD BE VAR NAMES
 var_expr = set(['ph', 'ps', 'ch', 'th', 'ta', 'et', 'ze', 'si', 'rh', 'mu', 'la', 'ka'])
 
 def make_or_clause(x, a, b):
