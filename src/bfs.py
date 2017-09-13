@@ -1,3 +1,5 @@
+# use deque instead of list 
+
 def bfs_internal(tree, visit, script, script_mem, ret):
     if not visit:
         visit = [tree]
