@@ -1,4 +1,4 @@
-# expr should be "op" for operator
+# expr should be "atom" for atom (op or var).
 
 class ExprTree:
     def __init__(self, expr = None, depth = None, left = None, right = None):
