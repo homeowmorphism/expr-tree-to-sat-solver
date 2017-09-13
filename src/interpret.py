@@ -110,7 +110,8 @@ def reenumerate(assignment):
 
 # the control flow should be based on whether or not we have un_op.
 # mutate the tree here -- instead of optimize (which goes up-down) instead of down-up
-# easier to read.
+# easier to read, and less worry. 
+# name this get assignment. (this action is called assignment). 
 def near_childvar(node, assignment):
     if assignment[node]:
         return assignment[node]
@@ -133,6 +134,7 @@ def declare_clauses(assignment):
                 clauses.extend(make_imp_clause(x,a,b))
     return clauses
 
+# call bfs_script -> bfs_label
 def interpret(tree):
     assignment = {}
     assignment = bfs_script(tree, assign_var, assignment, assignment)
