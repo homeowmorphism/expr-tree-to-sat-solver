@@ -137,6 +137,10 @@ def declare_clauses(assignment):
 # call bfs_script -> bfs_label
 def interpret(tree):
     assignment = {}
+    # closure = lambda node: assign_var(node, assignment) -- but not really how to
+    # assignment = bfs...(tree, closure)
+    # or the pythonic way to do is is to create a class (multiple funcs + a class)
+    # assignment.assign_var (bound method)
     assignment = bfs_script(tree, assign_var, assignment, assignment)
     assignment = optimize(tree, tree, assignment, set([]))
     assignment, var_num = reenumerate(assignment)
