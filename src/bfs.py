@@ -1,5 +1,5 @@
 # use deque instead of list 
-
+# call the script "closure"
 def bfs_internal(tree, visit, script, script_mem, ret):
     if not visit:
         visit = [tree]
