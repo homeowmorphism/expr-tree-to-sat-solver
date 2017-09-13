@@ -103,6 +103,8 @@ def reenumerate(assignment):
     return assignment, n  
 
 # the control flow should be based on whether or not we have un_op.
+# mutate the tree here -- instead of optimize (which goes up-down) instead of down-up
+# easier to read.
 def near_childvar(node, assignment):
     if assignment[node]:
         return assignment[node]
