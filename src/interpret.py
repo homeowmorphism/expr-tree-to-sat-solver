@@ -62,7 +62,8 @@ def optimize(node, tree, assignment, var_expr_set):
         if node.expr not in var_expr_set:
             var_expr_set.add(node.expr)
             clean_var_expr(node, tree, assignment)
-
+            
+    # go deep in that first case
     elif node.expr in un_op:
         assignment[node] = None
         optimize(node.left, tree,  assignment, var_expr_set)
