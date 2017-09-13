@@ -1,8 +1,11 @@
 from src.expr_tree import ExprTree 
 from src.bfs import bfs
 
+# not needed, already passed in in translate.py
+# capitalization for constants only (another one down)
 FILE = "input/theorem.out"
 
+# don't need splitlines, there's a "for lines in f"
 def parse_lines(filename):
     with open(filename, 'r') as f:
         lines = f.read()
@@ -13,6 +16,7 @@ def extract_lines(lines):
     data_list = []
     for line in lines:
 
+        # don't repeat, can use split('atom ') for example.
         expr = line.strip() 
         if expr.startswith('atom '):
             expr = expr[len('atom '):]
@@ -29,6 +33,11 @@ def make_nodes(data_list):
         nodes[i].depth = data_list[i][1]
     return nodes
 
+# difficult to read
+# there is a much easie way to do it. 
+# instead of cursor being a scalar, would be a stack -- abstraction is better.
+# scalar has lots of edge cases, like is it possible to pass out of boundary. 
+# just the right data struct for the job -- do you store more or compute more?
 def make_tree(nodes):
     cursor = 0
     i = 1
