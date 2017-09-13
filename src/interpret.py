@@ -45,6 +45,9 @@ def assign_var(node, assignment):
 def print_assignment(node, assignment):
     print assignment[node]
 
+# O(n^2) alg -- use hash table.
+# could look this up into hash table 
+# also can assign here in dfs way and restruct 
 def clean_var_expr(var_node, current_node, assignment):
     if current_node.expr == var_node.expr:
         assignment[current_node] = assignment[var_node]
